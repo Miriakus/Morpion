@@ -23,10 +23,7 @@ int main()
             cout << "Au tour des ronds." << endl << endl;
         }
 
-        cout << p1.ligne1 << endl;
-        cout << p1.ligne2 << endl;
-        cout << p1.ligne3 << endl;
-        cout << p1.ligne4 << endl << endl;
+        p1.afficher();
 
         cout << "Quelle case voulez-vous ? (Lettre/Chiffre)" << endl;
         cin >> choix;

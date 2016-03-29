@@ -15,10 +15,10 @@ class Plateau
         void setLigne2(string);
         void setLigne3(string);
         void setLigne4(string);
-         string ligne1;
-            string ligne2;
-            string ligne3;
-            string ligne4;
+        string ligne1;
+        string ligne2;
+        string ligne3;
+        string ligne4;
         void afficher() const;
         Plateau();
         virtual ~Plateau();
