@@ -60,7 +60,27 @@ void App::Run()
 		player=(player%2)?1:2;
 
 		cout << "Player " << player << ", enter a number:  ";
-		cin >> choice;
+        cin >> choice;
+
+        while(cin.fail())
+        {
+            if(cin.fail()) {
+                cout << "Incorrect value , must be an integer";
+            }
+            else{
+                if(choice < 0 || choice > 9)
+                {
+                    cout << "Incorrect value, must be between 0 and 9";
+                }
+            }
+
+            cin.clear();
+            cin.ignore();
+            cout << "Player " << player << ", enter a number:  ";
+            cin >> choice;
+        }
+
+
 
 		mark=(player == 1) ? 'X' : 'O';
 
