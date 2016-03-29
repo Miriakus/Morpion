@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1459259216 source:f:\ingésup\cours\poo\projets\morpion\morpion_2\main.cpp
+	<iostream>
+	"Board.h"
+	"App.h"
+
+1459257680 f:\ingésup\cours\poo\projets\morpion\morpion_2\include\board.h
+
+1459260621 source:f:\ingésup\cours\poo\projets\morpion\morpion_2\src\board.cpp
+	"Board.h"
+	<iostream>
+
+1459258454 f:\ingésup\cours\poo\projets\morpion\morpion_2\include\app.h
+	"Board.h"
+
+1459260725 source:f:\ingésup\cours\poo\projets\morpion\morpion_2\src\app.cpp
+	"App.h"
+	<iostream>
+	"Board.h"
+
