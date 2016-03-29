@@ -18,19 +18,21 @@ int main()
         {
             cout << "Au tour des croix." << endl << endl;
             // CHOIX INVALIDE
-        if(choix != "A1" || "A2" || "A3" || "B1" || "B2" || "B3" || "C1" || "C2" || "C3")
+        if(choix != "" && choix != "A1" && choix != "A2" &&  choix != "A3" && choix != "B1" &&  choix != "B2" &&  choix != "B3" &&  choix != "C1" &&  choix != "C2" &&  choix != "C3")
         {
             cout << "Choix invalide. Veuillez choisir une case valide." << endl << endl;
         }
+
         }
         else if(rond == 1)
         {
             cout << "Au tour des ronds." << endl << endl;
             // CHOIX INVALIDE
-        if(choix != "A1" || "A2" || "A3" || "B1" || "B2" || "B3" || "C1" || "C2" || "C3")
+        if(choix != "" && choix != "A1" && choix != "A2" &&  choix != "A3" && choix != "B1" &&  choix != "B2" && choix != "B3" &&  choix != "C1" &&  choix != "C2" &&  choix != "C3")
         {
             cout << "Choix invalide. Veuillez choisir une case valide." << endl << endl;
         }
+
         }
 
         cout << p1.ligne1 << endl;
@@ -43,7 +45,11 @@ int main()
 
         // POSSIBILITES
 
-        if(choix == "A1")
+        if(choix == "A1"){
+            if(p1.ligne2[2] == 'X' || p1.ligne2[2] == 'O')
+                {
+                    cout << endl << endl << "Case deja prise, veuillez choisir une case vide." << endl;
+                }
         {
             if(croix == 1)
             {
@@ -81,8 +87,13 @@ int main()
                         }
                 }
             }
+            }
         }
-        else if(choix == "A2")
+        else if(choix == "A2"){
+            if(p1.ligne3[2] == 'X' || p1.ligne3[2] == 'O')
+                {
+                    cout << endl << endl << "Case deja prise, veuillez choisir une case vide." << endl;
+                }
         {
             if(croix == 1)
             {
@@ -120,8 +131,13 @@ int main()
                         }
                 }
             }
+            }
         }
-        else if(choix == "A3")
+        else if(choix == "A3"){
+            if(p1.ligne4[2] == 'X' || p1.ligne4[2] == 'O')
+                {
+                    cout << endl << endl << "Case deja prise, veuillez choisir une case vide." << endl;
+                }
         {
             if(croix == 1)
             {
@@ -159,8 +175,13 @@ int main()
                         }
                 }
             }
+            }
         }
-        else if(choix == "B1")
+        else if(choix == "B1"){
+            if(p1.ligne2[4] == 'X' || p1.ligne2[4] == 'O')
+                {
+                    cout << endl << endl << "Case deja prise, veuillez choisir une case vide." << endl;
+                }
         {
             if(croix == 1)
             {
@@ -198,8 +219,13 @@ int main()
                         }
                 }
             }
+            }
         }
-        else if(choix == "B2")
+        else if(choix == "B2"){
+            if(p1.ligne3[4] == 'X' || p1.ligne3[4] == 'O')
+                {
+                    cout << endl << endl << "Case deja prise, veuillez choisir une case vide." << endl;
+                }
         {
             if(croix == 1)
             {
@@ -237,8 +263,13 @@ int main()
                         }
                 }
             }
+            }
         }
-        else if(choix == "B3")
+        else if(choix == "B3"){
+            if(p1.ligne4[4] == 'X' || p1.ligne4[4] == 'O')
+                {
+                    cout << endl << endl << "Case deja prise, veuillez choisir une case vide." << endl;
+                }
         {
             if(croix == 1)
             {
@@ -276,8 +307,13 @@ int main()
                         }
                 }
             }
+            }
         }
-        else if(choix == "C1")
+        else if(choix == "C1"){
+            if(p1.ligne2[6] == 'X' || p1.ligne2[6] == 'O')
+                {
+                    cout << endl << endl << "Case deja prise, veuillez choisir une case vide." << endl;
+                }
         {
             if(croix == 1)
             {
@@ -315,8 +351,13 @@ int main()
                         }
                 }
             }
+            }
         }
-        else if(choix == "C2")
+        else if(choix == "C2"){
+            if(p1.ligne3[6] == 'X' || p1.ligne3[6] == 'O')
+                {
+                    cout << endl << endl << "Case deja prise, veuillez choisir une case vide." << endl;
+                }
         {
             if(croix == 1)
             {
@@ -354,8 +395,13 @@ int main()
                         }
                 }
             }
+            }
         }
-        else if(choix == "C3")
+        else if(choix == "C3"){
+            if(p1.ligne4[6] == 'X' || p1.ligne4[6] == 'O')
+                {
+                    cout << endl << endl << "Case deja prise, veuillez choisir une case vide." << endl;
+                }
         {
             if(croix == 1)
             {
@@ -393,6 +439,7 @@ int main()
                         }
                 }
             }
+            }
         }
 
 
@@ -424,6 +471,12 @@ int main()
         {
             cout << "Bravo ! Le joueur O gagne." << endl;
             coups = 10;
+        }
+
+        //AUCUNE VICTOIRE :
+        if(coups == 10)
+        {
+            cout << "Dommage, aucune victoire! Recommencez la partie !" << endl;
         }
 
         // CHANGEMENT DE JOUEUR
