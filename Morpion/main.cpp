@@ -387,87 +387,31 @@ int main()
 
         // VICTOIRES CROIX :
 
-        if(p1.ligne2[2] == 'X' && p1.ligne2[4] == 'X' && p1.ligne2[6] == 'X')
+         if(p1.ligne2[2] == 'X' && p1.ligne2[4] == 'X' && p1.ligne2[6] == 'X' ||
+           p1.ligne3[2] == 'X' && p1.ligne3[4] == 'X' && p1.ligne3[6] == 'X' ||
+           p1.ligne4[2] == 'X' && p1.ligne4[4] == 'X' && p1.ligne4[6] == 'X' ||
+           p1.ligne2[2] == 'X' && p1.ligne3[2] == 'X' && p1.ligne4[2] == 'X' ||
+           p1.ligne2[4] == 'X' && p1.ligne3[4] == 'X' && p1.ligne4[4] == 'X' ||
+           p1.ligne2[6] == 'X' && p1.ligne3[6] == 'X' && p1.ligne4[6] == 'X' ||
+           p1.ligne2[2] == 'X' && p1.ligne3[4] == 'X' && p1.ligne4[6] == 'X' ||
+           p1.ligne2[6] == 'X' && p1.ligne3[4] == 'X' && p1.ligne4[2] == 'X')
         {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne3[2] == 'X' && p1.ligne3[4] == 'X' && p1.ligne3[6] == 'X')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne4[2] == 'X' && p1.ligne4[4] == 'X' && p1.ligne4[6] == 'X')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne2[2] == 'X' && p1.ligne3[2] == 'X' && p1.ligne4[2] == 'X')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne2[4] == 'X' && p1.ligne3[4] == 'X' && p1.ligne4[4] == 'X')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne2[6] == 'X' && p1.ligne3[6] == 'X' && p1.ligne4[6] == 'X')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne2[2] == 'X' && p1.ligne3[4] == 'X' && p1.ligne4[6] == 'X')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne2[6] == 'X' && p1.ligne3[4] == 'X' && p1.ligne4[2] == 'X')
-        {
-            cout << "Bravo !" << endl;
+            cout << "Bravo ! Le joueur X gagne." << endl;
             coups = 10;
         }
 
         // VICTOIRES RONDS :
 
-        if(p1.ligne2[2] == 'O' && p1.ligne2[4] == 'O' && p1.ligne2[6] == 'O')
+        if(p1.ligne2[2] == 'O' && p1.ligne2[4] == 'O' && p1.ligne2[6] == 'O' ||
+           p1.ligne3[2] == 'O' && p1.ligne3[4] == 'O' && p1.ligne3[6] == 'O' ||
+           p1.ligne4[2] == 'O' && p1.ligne4[4] == 'O' && p1.ligne4[6] == 'O' ||
+           p1.ligne2[2] == 'O' && p1.ligne3[2] == 'O' && p1.ligne4[2] == 'O' ||
+           p1.ligne2[4] == 'O' && p1.ligne3[4] == 'O' && p1.ligne4[4] == 'O' ||
+           p1.ligne2[6] == 'O' && p1.ligne3[6] == 'O' && p1.ligne4[6] == 'O' ||
+           p1.ligne2[2] == 'O' && p1.ligne3[4] == 'O' && p1.ligne4[6] == 'O' ||
+           p1.ligne2[6] == 'O' && p1.ligne3[4] == 'O' && p1.ligne4[2] == 'O')
         {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne3[2] == 'O' && p1.ligne3[4] == 'O' && p1.ligne3[6] == 'O')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne4[2] == 'O' && p1.ligne4[4] == 'O' && p1.ligne4[6] == 'O')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne2[2] == 'O' && p1.ligne3[2] == 'O' && p1.ligne4[2] == 'O')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne2[4] == 'O' && p1.ligne3[4] == 'O' && p1.ligne4[4] == 'O')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne2[6] == 'O' && p1.ligne3[6] == 'O' && p1.ligne4[6] == 'O')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne2[2] == 'O' && p1.ligne3[4] == 'O' && p1.ligne4[6] == 'O')
-        {
-            cout << "Bravo !" << endl;
-            coups = 10;
-        }
-        else if(p1.ligne2[6] == 'O' && p1.ligne3[4] == 'O' && p1.ligne4[2] == 'O')
-        {
-            cout << "Bravo !" << endl;
+            cout << "Bravo ! Le joueur O gagne." << endl;
             coups = 10;
         }
 
@@ -485,7 +429,7 @@ int main()
             rond = 0;
         }*/
 
-        cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+        cout << endl << endl;
     }
 
     if(coups == 10)
