@@ -17,10 +17,20 @@ int main()
         if(croix == 1)
         {
             cout << "Au tour des croix." << endl << endl;
+            // CHOIX INVALIDE
+        if(choix != "A1" || "A2" || "A3" || "B1" || "B2" || "B3" || "C1" || "C2" || "C3")
+        {
+            cout << "Choix invalide. Veuillez choisir une case valide." << endl << endl;
+        }
         }
         else if(rond == 1)
         {
             cout << "Au tour des ronds." << endl << endl;
+            // CHOIX INVALIDE
+        if(choix != "A1" || "A2" || "A3" || "B1" || "B2" || "B3" || "C1" || "C2" || "C3")
+        {
+            cout << "Choix invalide. Veuillez choisir une case valide." << endl << endl;
+        }
         }
 
         cout << p1.ligne1 << endl;
@@ -385,6 +395,7 @@ int main()
             }
         }
 
+
         // VICTOIRES CROIX :
 
          if(p1.ligne2[2] == 'X' && p1.ligne2[4] == 'X' && p1.ligne2[6] == 'X' ||
@@ -429,7 +440,7 @@ int main()
             rond = 0;
         }*/
 
-        cout << endl << endl;
+        cout <<  endl << endl;
     }
 
     if(coups == 10)
