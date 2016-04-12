@@ -1,6 +1,7 @@
 #include "App.h"
 #include <iostream>
 #include "Board.h"
+#include <cstdlib>
 
 using namespace std;
 
