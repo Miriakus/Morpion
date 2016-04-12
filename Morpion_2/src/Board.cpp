@@ -5,7 +5,6 @@ using namespace std;
 
 Board::Board()
 {
-    cout<<"test";
 
     //ctor
 }

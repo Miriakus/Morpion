@@ -51,34 +51,38 @@ int App::checkwin() //On vérifie les conditions de victoires, 1 : Win, 0 : Draw
 }
 void App::Run()// Fonction run contenant la plupart de l'intelligence afin qu'elle ne soit pas dans le main.
 {
-    int player = 1,i,choice;
+    int player = 1,i,choice,z; //i est la variable de condition de victoire, z est la variable de vérification de cin.
+    string value;
 	char mark;
 	do {
         system("cls");
+        z = 0; //réinitialisation de ma variable de vérification
 		b1.afficher();
 		player=(player%2)?1:2;
 
 		cout << "Joueur " << player << ", entrez un nombre:  ";
-        cin >> choice;
+        cin >> value;
 
-        while(cin.fail()) //Vérification que l'utilisateur ne rentre que des chiffres de 1 à 9
-        {
-            if(cin.fail()) {
-                cout << "Valeur incorrecte, choisissez un chiffre de 1 à 9";
+        while(z != 1){ //Vérification que la valeur est bien un chiffre de 1 à 9
+            try{
+                choice=std::stoi( value ); //On cast la valeur de value dans un int choice
             }
-            else{
-                if(choice < 0 || choice > 9)
-                {
-                    cout << "Valeur incorrecte, choisissez un chiffre de 1 à 9";
-                }
+            catch(exception e)
+            {
+                choice = -1;                //En cas d'exception donc d'erreur on donne à choice une valeur qui l'empeche de valider la condition suivante.
             }
 
+            if(choice>0 && choice<10){       //Si choice est bien entre 1 et 9 alors on sort de la boucle et on valide la valeur.
+                z = 1;
+            }
+            else if (choice<1 || choice>9){     //Si choice n'est pas un chiffre entre 1 et 9 alors on supprime la valeur donnée par l'utilisateur, on affiche un message d'erreur et on demande une nouvelle valeur.
+            cout << "Valeur incorrecte, choisissez un chiffre de 1 a 9";
             cin.clear();
             cin.ignore();
-            cout << "Joueur " << player << ", entrez un nombre:  ";
-            cin >> choice;
+            cout << "\nJoueur " << player << ", entrez un nombre:  ";
+            cin >> value;
+            }
         }
-
 
 
 		mark=(player == 1) ? 'X' : 'O'; //Détermine si le joueur est O ou X
@@ -114,7 +118,7 @@ void App::Run()// Fonction run contenant la plupart de l'intelligence afin qu'el
 			b1.setSquare(9, mark);
 		else
 		{
-			cout<<"Cette case est deja prise !";
+			cout<<"Mouvement invalide !";
 
 			player--; //ici on empêche le joueur de changer en cas de mouvement invalide
 			cin.ignore();
