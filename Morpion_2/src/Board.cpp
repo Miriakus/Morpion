@@ -14,20 +14,20 @@ Board::~Board()
 {
     //dtor
 }
-char Board::getSquare(int i)
+char Board::getSquare(int i) //getter
 {
         return square[i];
 }
-void Board::setSquare(int i, char mark)
+void Board::setSquare(int i, char mark) //setter
 {
 
     this->square[i] = mark;
 }
-void Board::afficher()
+void Board::afficher() //On affiche le tableau
 {
 	cout << "\n\n Morpion\n\n";
 
-	cout << "Player 1 (X)  -  Player 2 (O)" << endl << endl;
+	cout << "Joueur 1 (X)  -  Joueur 2 (O)" << endl << endl;
 	cout << endl;
 
 	cout << "     |     |     " << endl;

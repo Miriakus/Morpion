@@ -14,9 +14,8 @@ App::~App()
     //dtor
 }
 
-int App::checkwin()
+int App::checkwin() //On vérifie les conditions de victoires, 1 : Win, 0 : Draw, -1 : La partie continue
 {
-    cout<<"1: "<<b1.getSquare(1)<<endl;
     if (b1.getSquare(1) == b1.getSquare(2)&& b1.getSquare(2) == b1.getSquare(3))
 
 		return 1;
@@ -50,7 +49,7 @@ int App::checkwin()
 		return -1;
 
 }
-void App::Run()
+void App::Run()// Fonction run contenant la plupart de l'intelligence afin qu'elle ne soit pas dans le main.
 {
     int player = 1,i,choice;
 	char mark;
@@ -59,31 +58,33 @@ void App::Run()
 		b1.afficher();
 		player=(player%2)?1:2;
 
-		cout << "Player " << player << ", enter a number:  ";
+		cout << "Joueur " << player << ", entrez un nombre:  ";
         cin >> choice;
 
-        while(cin.fail())
+        while(cin.fail()) //Vérification que l'utilisateur ne rentre que des chiffres de 1 à 9
         {
             if(cin.fail()) {
-                cout << "Incorrect value , must be an integer";
+                cout << "Valeur incorrecte, choisissez un chiffre de 1 à 9";
             }
             else{
                 if(choice < 0 || choice > 9)
                 {
-                    cout << "Incorrect value, must be between 0 and 9";
+                    cout << "Valeur incorrecte, choisissez un chiffre de 1 à 9";
                 }
             }
 
             cin.clear();
             cin.ignore();
-            cout << "Player " << player << ", enter a number:  ";
+            cout << "Joueur " << player << ", entrez un nombre:  ";
             cin >> choice;
         }
 
 
 
-		mark=(player == 1) ? 'X' : 'O';
+		mark=(player == 1) ? 'X' : 'O'; //Détermine si le joueur est O ou X
 
+
+        //Vérifie que l'emplacement est disponible puis met la marque du joueur dont le tour est en cours
 		if (choice == 1 && b1.getSquare(1) == '1')
 
 			b1.setSquare(1, mark);
@@ -113,9 +114,9 @@ void App::Run()
 			b1.setSquare(9, mark);
 		else
 		{
-			cout<<"Invalid move ";
+			cout<<"Cette case est deja prise !";
 
-			player--;
+			player--; //ici on empêche le joueur de changer en cas de mouvement invalide
 			cin.ignore();
 			cin.get();
 		}
@@ -126,10 +127,10 @@ void App::Run()
 	system("cls");
 	b1.afficher();
 	if(i==1)
-
-		cout<<"==>\aPlayer "<<--player<<" win ";
+        //Utilisation de \a pour faire une alerte lors de la fin d'une partie
+		cout<<"==>\aJoueur "<<--player<<" Victoire ";
 	else
-		cout<<"==>\aGame draw";
+		cout<<"==>\aEgalite";
 
 	cin.ignore();
 	cin.get();
