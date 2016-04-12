@@ -123,6 +123,7 @@ void App::Run()
 
 		player++;
 	}while(i==-1);
+	system("cls");
 	b1.afficher();
 	if(i==1)
 
