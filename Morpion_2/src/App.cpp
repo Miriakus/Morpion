@@ -77,6 +77,8 @@ void App::Run()// Fonction run contenant la plupart de l'intelligence afin qu'el
                 z = 1;
             }
             else if (choice<1 || choice>9){     //Si choice n'est pas un chiffre entre 1 et 9 alors on supprime la valeur donnée par l'utilisateur, on affiche un message d'erreur et on demande une nouvelle valeur.
+            system("cls");
+            b1.afficher();
             cout << "Valeur incorrecte, choisissez un chiffre de 1 a 9";
             cin.clear();
             cin.ignore();
